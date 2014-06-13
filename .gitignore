@@ -1,5 +1,4 @@
-INSTALL.txt
-LICENSE.txt
-README.txt
-demos/
-extras/documentation
+.project
+.cache/
+.settings/
+shell/
