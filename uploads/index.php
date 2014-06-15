@@ -28,11 +28,9 @@ function upload($userId, $fileId, $type='vid') {
 }
 
 $filename = '../incomings/'.$fileId.'_'.$typeId.'_'.$userId.'.up';
-if (file_exists($filename) )
-{
+if (file_exists($filename) ) {
 	$f = file_get_contents($filename);
-	if (time() <= $f)
-	{
+	if (time() <= $f) {
 		if(isset($_FILES['fileInput'])) {
 			$name = $_FILES['fileInput']['name'];
 			$explode = explode(".", $name);
@@ -63,37 +61,14 @@ if (file_exists($filename) )
 				file_get_contents('http://'.MASTER_SERV.'/utils/add_db_infos.php?tid='.$typeId.'&sid='.SERVER_ID.'&fid='.$fileId.'&uid='.$userId.'&url='.urlencode($url.'uploads/'.$path).'&hash='.$hash);
 			}
 		}
-/*
-if ($_FILES['videoTumbnail']['name'] != '')
-{	
-	if ($_FILES['videoTumbnail']['size'] <= 1000000)
-	{
-		$name = $_FILES['videoTumbnail']['name'];
-		$explode = explode(".", $name);
-		$ext = strtolower($explode[count($explode)-1]);
-		$acceptedExts = array('jpeg', 'jpg', 'png', 'gif', 'tiff', 'svg');
-		if (in_array(strtolower($ext), $acceptedExts) )
-		{
-			$tumbnailPath = Upload::uploadTumbnail($session->getName() );
-		}
-		Upload::addDbInfos($tumbnailPath, $session->getId() );
 	}
-	else
-	{
-		$err = $lang['size_tumbnail'];
-	}
-}
- */
-	}
-	else
-	{
+	else {
 		header('HTTP/1.1 403 Forbidden');
 		echo '<h1>403 Forbidden</h1>';
 	}
 	unlink($filename);
 }
-else
-{
+else {
 	header('HTTP/1.1 403 Forbidden');
 	echo '<h1>403 Forbidden</h1>';
 }
