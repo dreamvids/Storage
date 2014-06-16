@@ -2,3 +2,5 @@
 .cache/
 .settings/
 shell/
+uploads/*/
+incomings/*.up

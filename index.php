@@ -1,4 +1,11 @@
 <?php
+/*
+ * Run this script to know how many disk space is left on the server.
+ * If the critical disk space limit is reached, then the script will display "CRITICAL_ALERT"
+ * and send you a E-Mail.
+ * Else, it'll display the disk free space (in Bytes).
+ */
+
 // Constants definition
 define('ROOT', '/'); // Your disk/partition root path where you want to store data
 define('ALERT_EMAIL_ADDRESS', 'you@domain.tld'); // Set your mail here, to receive alerts
