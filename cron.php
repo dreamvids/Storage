@@ -5,7 +5,7 @@
  * All expired accesses will be deleted by this script.
  */
 
-require('config.php'); // Here too, we need configuration variables
+define('WORKING_DIR', '/absolute/path/to/this/directory/without/final/slash');
 define ('DIR', WORKING_DIR.'/incomings/'); // Define the accesses directory
 $MyDirectory = opendir(DIR); // Open it
 $i = 0; $j = 0; // Init counters
