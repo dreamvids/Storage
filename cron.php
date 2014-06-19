@@ -5,7 +5,7 @@
  * All expired accesses will be deleted by this script.
  */
 
-define ('DIR', getcwd().'incomings/'); // Define the accesses directory
+define ('DIR', WORKING_DIR.'incomings/'); // Define the accesses directory
 $MyDirectory = opendir(DIR); // Open it
 $i = 0; $j = 0; // Init counters
 
