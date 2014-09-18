@@ -20,10 +20,10 @@ $free_space = disk_free_space(ROOT);
 if ($free_space < CRITICAL_FREE_SPACE)
 {
 	// French
-	mail(ALERT_EMAIL_ADDRESS, '[DV Storage] Seuil critique atteint sur '.$_SERVER['SERVER_ADDR'].', Libre: '.($free_space / UNIT).' '.UNIT_NAME);
+	mail(ALERT_EMAIL_ADDRESS, '[DV Storage] Seuil critique atteint sur '.$_SERVER['SERVER_ADDR'], 'Libre: '.($free_space / UNIT).' '.UNIT_NAME);
 	
 	// English
-	//mail(ALERT_EMAIL_ADDRESS, '[DV Storage] Critical limit reached on '.$_SERVER['SERVER_ADDR'].', Free: '.($free_space / UNIT).' '.UNIT_NAME);
+	//mail(ALERT_EMAIL_ADDRESS, '[DV Storage] Critical limit reached on '.$_SERVER['SERVER_ADDR'], 'Free: '.($free_space / UNIT).' '.UNIT_NAME);
 	
 	echo 'CRITICAL_ALERT';
 }
