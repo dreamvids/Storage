@@ -1,6 +1,6 @@
 .project
 .cache/
 .settings/
-shell/
 uploads/*/
 incomings/*.up
+shell/
