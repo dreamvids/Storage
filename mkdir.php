@@ -17,11 +17,13 @@ $hash = hash_hmac('sha256', $url, PRIVATE_KEY); // Create the server Signature
 if (@$_GET['hash'] == $hash) {
 	if (!file_exists('uploads/')) {
 		mkdir('uploads', 0777);
+		chmod('uploads/', 0777);
 	}
 	
 	if (preg_match("#^[a-zA-Z0-9_]+$#", $_GET['cid'])) {
 		if (!file_exists('uploads/'.$_GET['cid'].'/')) {
 			mkdir('uploads/'.$_GET['cid'], 0777);
+			chmod('uploads/'.$_GET['cid'].'/', 0777);
 			echo 0;exit();
 		}
 	}
